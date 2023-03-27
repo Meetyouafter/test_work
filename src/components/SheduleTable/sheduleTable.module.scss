@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+  padding: 80px 77px 121px 77px;
+}
+
+.shedule_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 21px;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 110%;
+  color: #000222;
+}
+
+.shedule_select_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 222px;
+  height: 42px;
+  border: 1px solid #000222;
+  border-radius: 46px;
+  background: #E5E5E5;
+}
+
+.shedule_select_container > span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #000222;
+}
+
+.shedule_select_container > select {
+  background: #E5E5E5;
+  border: none;
+  color: #888899;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+
+
+
+
+.order {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 16px;
+  padding-bottom: 69px;
+}
+
+.order > button {
+  height: 31px;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  border: none;
+  cursor: pointer;
+}
+
+.order > .active_order_button {
+  background: #185ADB;
+  color: #FFFFFF;
+}
+
+.order > .nonactive_order_button {
+  background: #FFFFFF;
+  color: #191919;
+}
+
+.order > p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 125%;
+  text-align: center;
+  color: #888888;
+  padding-right: 9px;
+}
+
+.day_conteiner {
+  display: flex;
+}

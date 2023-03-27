@@ -6,7 +6,7 @@ import Speakers from '../Speakers/Speakers';
 import Program from '../Program/Program';
 import SheduleDate from '../SheduleDate/SheduleDate';
 
-const Shedule = () => {
+const SheduleList = () => {
   const date = '12 октября';
   const dayOfWeek = 'Вторник';
   const time = '14:00';
@@ -76,11 +76,11 @@ const Shedule = () => {
 
       </div>
       <div className={styles.next_shedule_date}>
-        <SheduleDate date="13 октября" dayOfWeek="Среда"/>
+        <SheduleDate date="13 октября" dayOfWeek="Среда" />
       </div>
 
     </div>
   );
 };
 
-export default Shedule;
+export default SheduleList;

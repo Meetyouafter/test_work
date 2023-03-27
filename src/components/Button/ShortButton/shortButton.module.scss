@@ -30,7 +30,8 @@
 }
 
 .disabled_button {
-  @include button(#ffffff, #185adb, '../../../assets/images/icons/add_blue.svg')
+  @include button(#ffffff, #185adb, '../../../assets/images/icons/add_blue.svg');
+  background-size: 30%;
 }
 
 .enabled_button {
@@ -45,7 +46,7 @@
   background-color: #185adb;
   cursor: pointer;
   background-image: url('../../../assets/images/icons/add_white.svg');
-  background-size: 30%;
+  background-size: 34%;
 }
 
 .enabled_button:hover {

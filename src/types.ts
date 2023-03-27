@@ -21,3 +21,28 @@ export interface ISheduleDate {
   date: string,
   dayOfWeek: string,
 }
+
+interface IEvent {
+  time: string,
+  place: string,
+  description: string,
+  event: boolean,
+  live: boolean,
+  id: string,
+}
+
+export interface ISheduleTableDay {
+  date: string,
+  events: IEvent[],
+}
+
+export interface ISheduleTableTime {
+  event: IEvent,
+}
+
+export interface IDateParser {
+  parseDate(data: string): {
+    dateForTable: string;
+    time: string;
+  }
+}
