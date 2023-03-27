@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
+import './reset_styles.scss';
 import './styles.scss';
 
 const container = document.getElementById('root');

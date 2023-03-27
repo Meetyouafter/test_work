@@ -1,0 +1,67 @@
+@mixin button ($backColor, $borderColor, $url) {
+  box-sizing: border-box;
+  width: 34px;
+  height: 34px;
+  background: $backColor;
+  border: 1px solid $borderColor;
+  border-radius: 17px;
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  width: 113px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  width: 63px;
+  color: #888899;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 135%;
+  text-transform: capitalize;
+  text-align: right;
+  margin-right: 16px;
+  content: 'В календаре';
+}
+
+.disabled_button {
+  @include button(#ffffff, #185adb, '../../../assets/images/icons/add_blue.svg')
+}
+
+.enabled_button {
+  @include button(#C0C0C0, #888899, '../../../assets/images/icons/check.svg')
+}
+
+.archive_button {
+  @include button(#ffffff, #C0C0C0, '../../../assets/images/icons/play_black.svg')
+}
+
+.disabled_button:hover {
+  background-color: #185adb;
+  cursor: pointer;
+  background-image: url('../../../assets/images/icons/add_white.svg');
+  background-size: 30%;
+}
+
+.enabled_button:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+  background-image: url('../../../assets/images/icons/cross_gray.svg');
+  background-size: 30%;
+}
+
+.enabled_button:hover .description::before {
+  content: 'Убрать';
+}
+
+.archive_button:hover {
+  background-color: #185adb;
+  cursor: pointer;
+  background-image: url('../../../assets/images/icons/play_white.svg');
+  background-size: 25%;
+}
