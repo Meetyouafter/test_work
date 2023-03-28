@@ -2,7 +2,7 @@ import React, { useState, FC } from 'react';
 import styles from './shortButton.module.scss';
 import { IButtonComponent } from '../../../types';
 
-const ShortButton: FC<IButtonComponent> = ({ variant, text }) => {
+const ShortButton: FC<IButtonComponent> = ({ variant, text, onClick }) => {
   const [isHover, setIsHover] = useState(false);
 
   const handleHover = () => {
@@ -24,6 +24,7 @@ const ShortButton: FC<IButtonComponent> = ({ variant, text }) => {
         aria-label="button"
         onMouseEnter={handleHover}
         onMouseLeave={handleLeave}
+        onClick={onClick}
       />
     </div>
   );

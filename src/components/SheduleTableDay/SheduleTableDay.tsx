@@ -1,22 +1,24 @@
 import React, { FC } from 'react';
 import styles from './sheduleTableDay.module.scss';
-import SheduleTableTime from '../SheduleTableTime/SheduleTableTime';
+import SheduleTableEvent from '../SheduleTableEvent/SheduleTableEvent';
 import { ISheduleTableDay } from '../../types';
-import getParseDate from './getParseDate';
+import getParseDate from '../../utils/getParseDate';
 
-const SheduleTableDay: FC<ISheduleTableDay> = ({ date, events }) => {
+const SheduleTableDay: FC<ISheduleTableDay> = ({ isMeasure, date, events }) => {
   const parsedDate = getParseDate.parseDate(date);
   const {
     dateForTable,
   } = parsedDate;
 
+  const titleStyle = isMeasure ? styles.shedule_title_measure : styles.shedule_title;
+
   return (
     <div className={styles.shedule_container}>
-      <p className={styles.shedule_title}>
+      <a className={titleStyle} href="/">
         {dateForTable}
-      </p>
+      </a>
       <div className={styles.container}>
-        {events.map(event => <SheduleTableTime key={event.id} event={event} />)}
+        {events.map(event => <SheduleTableEvent key={event.id} event={event} />)}
       </div>
     </div>
   );

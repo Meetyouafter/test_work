@@ -1,6 +1,7 @@
 const sheduleTableData = [
   {
     date: '2023-09-23T09:00:21.817Z',
+    isMeasure: false,
     events: [{
       time: '2023-09-23T09:00:21.817Z',
       place: '',
@@ -21,6 +22,7 @@ const sheduleTableData = [
   },
   {
     date: '2023-10-13T09:00:21.817Z',
+    isMeasure: false,
     events: [
       {
         time: '2023-10-13T09:00:21.817Z',
@@ -42,6 +44,7 @@ const sheduleTableData = [
   },
   {
     date: '2023-10-14T09:00:21.817Z',
+    isMeasure: false,
     events: [
       {
         time: '2023-10-14T09:00:21.817Z',
@@ -63,6 +66,7 @@ const sheduleTableData = [
   },
   {
     date: '2023-10-15T09:00:21.817Z',
+    isMeasure: true,
     events: [
       {
         time: '2023-10-15T09:00:21.817Z',
@@ -76,6 +80,7 @@ const sheduleTableData = [
   },
   {
     date: '2023-10-16T09:00:21.817Z',
+    isMeasure: false,
     events: [
       {
         time: '2023-10-16T09:00:21.817Z',

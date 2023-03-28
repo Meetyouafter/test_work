@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './speakers.module.scss';
 import Speaker from '../Speaker/Speaker';
 import arrowIcon from '../../assets/images/icons/button_arrow.svg';
-import speakers from './mock';
+import speakers from '../../utils/speakers';
 
 const Speakers: React.FC = () => {
   const scrollContainer = useRef<HTMLDivElement>(null);

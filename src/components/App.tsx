@@ -5,14 +5,13 @@ import {
 } from 'react-router-dom';
 import store from '../store';
 import InputForm from './InputForm/inputForm';
-import SheduleList from './SheduleList/SheduleList';
-import SheduleTable from './SheduleTable/SheduleTable';
+import Shedule from './Shedule/Shedule';
 
 const App = () => (
   <BrowserRouter>
     <Provider store={store}>
       <Routes>
-        <Route path="/" element={<SheduleTable />} />
+        <Route path="/" element={<Shedule />} />
         <Route path="/input" element={<InputForm />} />
       </Routes>
     </Provider>

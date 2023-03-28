@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import styles from './sheduleDate.module.scss';
+import styles from './sheduleListNextDate.module.scss';
 import { ISheduleDate } from '../../types';
 
-const SheduleDate: FC<ISheduleDate> = ({ date, dayOfWeek }) => (
+const SheduleListNextDate: FC<ISheduleDate> = ({ date, dayOfWeek }) => (
   <div className={styles.container}>
     <p>
       {date}
@@ -12,4 +12,4 @@ const SheduleDate: FC<ISheduleDate> = ({ date, dayOfWeek }) => (
   </div>
 );
 
-export default SheduleDate;
+export default SheduleListNextDate;

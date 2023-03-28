@@ -1,58 +1,6 @@
-.container {
-  display: flex;
-  justify-content: center;
+.wrapper {
+  padding-top: 64px;
   width: 100%;
-  height: 100%;
-  background: #f0f0f0;
-  padding: 77px 240px 135px 240px;
-}
-
-.shedule_wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.header_wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 64px;
-}
-
-.title {
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 110%;
-  color: #000222;
-}
-
-.shedule_select_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 222px;
-  height: 42px;
-  border: 1px solid #000222;
-  border-radius: 46px;
-  background: #E5E5E5;
-}
-
-.shedule_select_container > span {
-  font-weight: 400;
-  font-size: 14px;
-  color: #000222;
-}
-
-.shedule_select_container > select {
-  background: #E5E5E5;
-  border: none;
-  color: #888899;
-  font-weight: 400;
-  font-size: 14px;
 }
 
 .shedule_container {
@@ -183,37 +131,6 @@
   display: none;
 }
 
-@media screen and (min-width: 1440px) {
-  .container {
-    padding: 77px 240px 137px 240px;
-  }
-}
-
-@media screen and (max-width: 1439px) {
-  .container {
-    padding: 77px 80px 137px 80px;
-  }
-}
-
-@media screen and (max-width: 1279px) {
-  .container {
-    padding: 77px 80px 113px 80px;
-  }
-  //.shedule_body {
-  //  padding: 40px 22px 36px 22px;
-  //}
-}
-
-@media screen and (max-width: 1024px) {
-  .container {
-    height: auto;
-    padding: 77px 30px 67px 30px;
-  }
-  .shedule_select_container {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 767px) {
   .shedule_body_register_laptop {
     display: none;
@@ -233,12 +150,6 @@
   }
 }
 
-@media screen and (max-width: 566px) {
-  .container {
-    padding: 77px 30px 76px 30px;
-  }
-}
-
 @media screen and (max-width: 419px) {
   .shedule_body {
     flex-direction: column;
@@ -248,10 +159,6 @@
 }
 
 @media screen and (max-width: 319px) {
-  .container {
-    padding: 80px 20px 120px 20px;
-  }
-
   .shedule_title_block {
     height: 63px;
   }
@@ -295,5 +202,6 @@
 
   .next_shedule_date {
     display: block;
+    width: 100%;
   }
 }

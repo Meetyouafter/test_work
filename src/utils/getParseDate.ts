@@ -1,4 +1,4 @@
-import { IDateParser } from '../../types';
+import { IDateParser } from '../types';
 
 const getParseDate: IDateParser = {
   parseDate: (data: string) => {
@@ -46,7 +46,7 @@ const getParseDate: IDateParser = {
 
     return {
       dateForTable: `${day} ${parseMonth[month]}, ${parseDayOfWeek[dayOfWeek]}`,
-      time: `${getTime(hour)}:${getTime(minutes)}`,
+      time: `${hour}:${getTime(minutes)}`,
     };
   },
 };

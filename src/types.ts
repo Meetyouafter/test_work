@@ -2,12 +2,14 @@ export interface IButton {
   variant: 'enabled' | 'disabled' | 'archive',
   type: 'long' | 'short',
   text: string,
+  onClick: () => void,
   fullWidth?: boolean,
 }
 
 export interface IButtonComponent {
   variant: 'enabled' | 'disabled' | 'archive',
   text: string,
+  onClick: () => void,
   fullWidth?: boolean,
 }
 
@@ -33,6 +35,7 @@ interface IEvent {
 
 export interface ISheduleTableDay {
   date: string,
+  isMeasure: boolean,
   events: IEvent[],
 }
 
