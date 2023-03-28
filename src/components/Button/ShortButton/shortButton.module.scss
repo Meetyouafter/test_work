@@ -23,10 +23,13 @@
   font-weight: 400;
   font-size: 11px;
   line-height: 135%;
-  text-transform: capitalize;
   text-align: right;
   margin-right: 16px;
   content: 'В календаре';
+}
+
+.description::first-letter {
+  text-transform: uppercase;
 }
 
 .disabled_button {

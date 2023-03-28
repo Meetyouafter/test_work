@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import SheduleTable from '../SheduleTable/SheduleTable';
 import SheduleList from '../SheduleList/SheduleList';
 import styles from './shedule.module.scss';
+import sheduleListData from '../../utils/sheduleListData';
+import sheduleTableData from '../../utils/sheduleTableData';
 
 const Shedule = () => {
   const [view, setView] = useState('list');
@@ -23,8 +25,8 @@ const Shedule = () => {
           </div>
         </div>
         {view === 'table'
-          ? <SheduleTable />
-          : <SheduleList />}
+          ? <SheduleTable data={sheduleTableData} />
+          : <SheduleList data={sheduleListData} />}
       </div>
     </div>
   );

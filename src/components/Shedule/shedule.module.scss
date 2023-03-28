@@ -57,6 +57,10 @@
   font-size: 14px;
 }
 
+select:focus:not(:focus-visible) {
+  outline: none;
+}
+
 @media screen and (min-width: 1440px) {
   .container {
     padding: 77px 240px 137px 240px;

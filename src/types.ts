@@ -33,10 +33,25 @@ interface IEvent {
   id: string,
 }
 
-export interface ISheduleTableElement {
+export interface ISheduleListData {
+  date: string,
+  title: string,
+  description: string,
+  organization: string,
+  participants: string,
+}
+
+export interface ISheduleListElement {
+  data: ISheduleListData,
+}
+
+export interface ISheduleTableData {
   date: string,
   isMeasure: boolean,
   events: IEvent[],
+}
+export interface ISheduleTableElement {
+  data: ISheduleTableData[],
 }
 
 export interface ISheduleTableEvent {
@@ -46,6 +61,7 @@ export interface ISheduleTableEvent {
 export interface IDateParser {
   parseDate(data: string): {
     dateForTable: string;
+    dateForList: string,
     time: string;
   }
 }

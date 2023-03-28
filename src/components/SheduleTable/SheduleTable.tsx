@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import SheduleTableElement from '../SheduleTableElement/SheduleTableElement';
-import sheduleTableData from '../../utils/sheduleTableData';
 import styles from './sheduleTable.module.scss';
+import { ISheduleTableElement } from '../../types';
 
-const SheduleTable = () => {
+const SheduleTable: FC<ISheduleTableElement> = ({ data }) => {
   const [week, setWeek] = useState('first');
 
   const getActiveWeek = (order: string) => {
@@ -22,13 +22,13 @@ const SheduleTable = () => {
         <button type="button" onClick={() => setWeek('third')} className={getActiveWeek('third')}>3-я неделя</button>
       </div>
       <div className={styles.day_conteiner}>
-        {sheduleTableData
-          .map(date => (
+        {data
+          .map(element => (
             <SheduleTableElement
-              key={date.date}
-              date={date.date}
-              isMeasure={date.isMeasure}
-              events={date.events}
+              key={element.date}
+              date={element.date}
+              isMeasure={element.isMeasure}
+              events={element.events}
             />
           ))}
       </div>

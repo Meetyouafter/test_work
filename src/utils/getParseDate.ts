@@ -27,7 +27,7 @@ const getParseDate: IDateParser = {
       11: 'декабря',
     };
 
-    const parseDayOfWeek: { [key: number]: string } = {
+    const parseDayOfWeekForTable: { [key: number]: string } = {
       0: 'ВС',
       1: 'ПН',
       2: 'ВТ',
@@ -35,6 +35,16 @@ const getParseDate: IDateParser = {
       4: 'ЧТ',
       5: 'ПТ',
       6: 'СБ',
+    };
+
+    const parseDayOfWeekForList: { [key: number]: string } = {
+      0: 'Воскресенье',
+      1: 'Понедельник',
+      2: 'Вторник',
+      3: 'Среда',
+      4: 'Четверг',
+      5: 'Пятница',
+      6: 'Суббота',
     };
 
     const getTime = (time: number) => {
@@ -45,7 +55,8 @@ const getParseDate: IDateParser = {
     };
 
     return {
-      dateForTable: `${day} ${parseMonth[month]}, ${parseDayOfWeek[dayOfWeek]}`,
+      dateForTable: `${day} ${parseMonth[month]}, ${parseDayOfWeekForTable[dayOfWeek]}`,
+      dateForList: `${day} ${parseMonth[month]} | ${parseDayOfWeekForList[dayOfWeek]}`,
       time: `${hour}:${getTime(minutes)}`,
     };
   },
