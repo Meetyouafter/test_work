@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SheduleTableDay from '../SheduleTableDay/SheduleTableDay';
+import SheduleTableElement from '../SheduleTableElement/SheduleTableElement';
 import sheduleTableData from '../../utils/sheduleTableData';
 import styles from './sheduleTable.module.scss';
 
@@ -24,7 +24,7 @@ const SheduleTable = () => {
       <div className={styles.day_conteiner}>
         {sheduleTableData
           .map(date => (
-            <SheduleTableDay
+            <SheduleTableElement
               key={date.date}
               date={date.date}
               isMeasure={date.isMeasure}

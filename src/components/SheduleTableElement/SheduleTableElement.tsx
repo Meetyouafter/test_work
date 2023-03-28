@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import styles from './sheduleTableDay.module.scss';
+import styles from './sheduleTableElement.module.scss';
 import SheduleTableEvent from '../SheduleTableEvent/SheduleTableEvent';
-import { ISheduleTableDay } from '../../types';
+import { ISheduleTableElement } from '../../types';
 import getParseDate from '../../utils/getParseDate';
 
-const SheduleTableDay: FC<ISheduleTableDay> = ({ isMeasure, date, events }) => {
+const SheduleTableElement: FC<ISheduleTableElement> = ({ isMeasure, date, events }) => {
   const parsedDate = getParseDate.parseDate(date);
   const {
     dateForTable,
@@ -24,4 +24,4 @@ const SheduleTableDay: FC<ISheduleTableDay> = ({ isMeasure, date, events }) => {
   );
 };
 
-export default SheduleTableDay;
+export default SheduleTableElement;

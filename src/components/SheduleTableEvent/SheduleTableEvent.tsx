@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
 import Button from '../Button/Button';
-import styles from './sheduleTableEvent.module.scss';
-import { ISheduleTableTime } from '../../types';
+import { ISheduleTableEvent } from '../../types';
 import getParseDate from '../../utils/getParseDate';
+import styles from './sheduleTableEvent.module.scss';
 
-const SheduleTableEvent: FC<ISheduleTableTime> = ({ event }) => {
+const SheduleTableEvent: FC<ISheduleTableEvent> = ({ event }) => {
   const [isSubscribe, setIsSubscribe] = useState(false);
 
   const handleClick = () => setIsSubscribe(!isSubscribe);
@@ -37,7 +37,7 @@ const SheduleTableEvent: FC<ISheduleTableTime> = ({ event }) => {
 
       {event.event ? <button type="button" className={styles.system_button}>Перейти в систему</button> : (
         <div className={styles.button}>
-          <Button variant="disabled" type="short" text="добавить в календарь" onClick={handleClick} />
+          <Button variant="check" type="short" text="добавить в календарь" onClick={handleClick} />
         </div>
       )}
     </div>

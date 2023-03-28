@@ -1,5 +1,5 @@
 export interface IButton {
-  variant: 'enabled' | 'disabled' | 'archive',
+  variant: 'check' | 'archive',
   type: 'long' | 'short',
   text: string,
   onClick: () => void,
@@ -7,7 +7,7 @@ export interface IButton {
 }
 
 export interface IButtonComponent {
-  variant: 'enabled' | 'disabled' | 'archive',
+  variant: 'check' | 'archive',
   text: string,
   onClick: () => void,
   fullWidth?: boolean,
@@ -33,13 +33,13 @@ interface IEvent {
   id: string,
 }
 
-export interface ISheduleTableDay {
+export interface ISheduleTableElement {
   date: string,
   isMeasure: boolean,
   events: IEvent[],
 }
 
-export interface ISheduleTableTime {
+export interface ISheduleTableEvent {
   event: IEvent,
 }
 

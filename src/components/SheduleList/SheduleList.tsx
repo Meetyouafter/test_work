@@ -45,7 +45,7 @@ const SheduleList = () => {
           </div>
 
           <div className={styles.shedule_body_register_laptop}>
-            <Button variant="disabled" type="long" text="добавить" onClick={handleClick} />
+            <Button variant="check" type="long" text="добавить" onClick={handleClick} />
             <p>615 участников уже записались</p>
           </div>
 
@@ -58,7 +58,7 @@ const SheduleList = () => {
         </div>
 
         <div className={styles.shedule_body_register_mobile}>
-          <Button variant="disabled" type="long" text="добавить" fullWidth onClick={handleClick} />
+          <Button variant="check" type="long" text="добавить" fullWidth onClick={handleClick} />
           <p>615 участников уже записались</p>
         </div>
       </div>
