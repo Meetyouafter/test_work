@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './longButton.module.scss';
-import { IButtonComponent } from '../../../types';
+import { IButtonComponent } from '../../../../types';
 
 const LongButton: React.FC<IButtonComponent> = ({
   variant, text, onClick, fullWidth,

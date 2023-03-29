@@ -1,6 +1,6 @@
 import React, { useState, FC } from 'react';
+import { IButtonComponent } from '../../../../types';
 import styles from './shortButton.module.scss';
-import { IButtonComponent } from '../../../types';
 
 const ShortButton: FC<IButtonComponent> = ({ variant, text, onClick }) => {
   const [isEnabled, setIsEnabled] = useState(false);

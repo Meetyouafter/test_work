@@ -1,5 +1,5 @@
 import React, { useState, FC, ChangeEvent } from 'react';
-import Input from '../InputForm/InputForm';
+import Input from '../shared/Input/InputForm';
 
 const InputPage: FC = () => {
   const [phone, setPhone] = useState<string>('');

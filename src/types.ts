@@ -32,7 +32,7 @@ export interface IButtonComponent {
   fullWidth?: boolean,
 }
 
-export interface ISpeaker {
+export interface ISpeakerProps {
   image: string,
   name: string,
   work: string,

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
-import Button from '../Button/Button';
+import Button from '../shared/Button/Button';
 import styles from './sheduleList.module.scss';
-import Speakers from '../Speakers/Speakers';
+import SpeakerList from '../SpeakerList/SpeakerList';
 import Program from '../Program/Program';
 import SheduleListNextDate from '../SheduleListNextDate/SheduleListNextDate';
 import { ISheduleListElement } from '../../types';
@@ -55,7 +55,7 @@ const SheduleList: FC<ISheduleListElement> = ({ data }) => {
         <div className={styles.shedule_body_footer}>
           <hr className={styles.divider_mobile} />
           <div className={styles.divider}>{organization}</div>
-          <Speakers />
+          <SpeakerList />
         </div>
 
         <div className={styles.shedule_body_register_mobile}>

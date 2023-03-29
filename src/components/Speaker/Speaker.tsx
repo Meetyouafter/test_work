@@ -1,13 +1,12 @@
 import React from 'react';
+import { ISpeakerProps } from '../../types';
 import styles from './speaker.module.scss';
-import { ISpeaker } from '../../types';
 
-const Speaker: React.FC<ISpeaker> = ({
+const Speaker: React.FC<ISpeakerProps> = ({
   name, work, image,
 }) => (
   <div className={styles.speaker_container}>
     <div className={styles.speaker_image} style={{ backgroundImage: `url(${image})` }} />
-
     <div className={styles.speaker_info}>
       <p className={styles.name}>{name}</p>
       <p className={styles.work}>{work}</p>

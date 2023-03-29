@@ -57,15 +57,15 @@
 }
   
 .disabled_button .button_section, .archive_button .button_section {
-  @include long_button_section(#185ADB, '../../../assets/images/icons/add_white.svg');
+  @include long_button_section(#185ADB, '../../../../assets/images/icons/add_white.svg');
 }
 
 .archive_button .button_section {
-  @include long_button_section(#185ADB, '../../../assets/images/icons/play_white.svg');
+  @include long_button_section(#185ADB, '../../../../assets/images/icons/play_white.svg');
 }
 
 .enabled_button .button_section {
-  @include long_button_section(#E5E5E5, '../../../assets/images/icons/check.svg');
+  @include long_button_section(#E5E5E5, '../../../../assets/images/icons/check.svg');
   border-left: 1px solid #888899;
 }
 
@@ -91,7 +91,7 @@
   color: #000222;
 
   .button_section {
-    background-image: url('../../../assets/images/icons/cross_black.svg');
+    background-image: url('../../../../assets/images/icons/cross_black.svg');
   }
 }
 

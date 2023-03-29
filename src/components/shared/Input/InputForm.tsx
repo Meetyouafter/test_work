@@ -3,8 +3,8 @@ import React, {
   useState, FormEvent, useEffect, FC,
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import styles from './inputForm.module.scss';
-import { IInputForm } from '../../types';
+import styles from './input.module.scss';
+import { IInputForm } from '../../../types';
 
 const createPattern = (format: string) => {
   const regexString = format
@@ -26,7 +26,7 @@ const removeDash = (str: string) => {
   return str.replace(regex, '');
 };
 
-const InputForm: FC<IInputForm> = ({
+const Input: FC<IInputForm> = ({
   name, mask, value, onChange, callBack, searchArray,
 }) => {
   const [phonesForRender, setPhonesForRender] = useState([]);
@@ -91,4 +91,4 @@ const InputForm: FC<IInputForm> = ({
   );
 };
 
-export default InputForm;
+export default Input;

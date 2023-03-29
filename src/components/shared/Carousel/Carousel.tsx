@@ -1,12 +1,14 @@
 import React, {
-  useRef, useEffect, useState, FC,
+  useRef, useEffect, useState, FC, ReactNode,
 } from 'react';
-import styles from './speakers.module.scss';
-import Speaker from '../Speaker/Speaker';
-import arrowIcon from '../../assets/images/icons/button_arrow.svg';
-import speakers from '../../utils/speakers';
+import arrowIcon from '../../../assets/images/icons/button_arrow.svg';
+import styles from './carousel.module.scss';
 
-const Speakers: FC = () => {
+interface CarouselProps {
+  children: ReactNode;
+}
+
+const Carousel: FC<CarouselProps> = ({ children }) => {
   const scrollContainer = useRef<HTMLDivElement>(null);
   const [isScrollLeftVisible, setIsScrollLeftVisible] = useState(false);
   const [isScrollRightVisible, setIsScrollRightVisible] = useState(true);
@@ -55,14 +57,7 @@ const Speakers: FC = () => {
         </button>
         )}
       <div className={styles.speakers_container} ref={scrollContainer}>
-        {speakers.map(speaker => (
-          <Speaker
-            key={speaker.id}
-            name={speaker.name}
-            work={speaker.work}
-            image={speaker.image}
-          />
-        ))}
+        {children}
       </div>
       {isScrollRightVisible
         && (
@@ -78,4 +73,4 @@ const Speakers: FC = () => {
   );
 };
 
-export default Speakers;
+export default Carousel;

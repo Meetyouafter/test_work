@@ -33,29 +33,29 @@
 }
 
 .disabled_button {
-  @include button(#ffffff, #185adb, '../../../assets/images/icons/add_blue.svg');
+  @include button(#ffffff, #185adb, '../../../../assets/images/icons/add_blue.svg');
   background-size: 30%;
 }
 
 .enabled_button {
-  @include button(#C0C0C0, #888899, '../../../assets/images/icons/check.svg')
+  @include button(#C0C0C0, #888899, '../../../../assets/images/icons/check.svg')
 }
 
 .archive_button {
-  @include button(#ffffff, #C0C0C0, '../../../assets/images/icons/play_black.svg')
+  @include button(#ffffff, #C0C0C0, '../../../../assets/images/icons/play_black.svg')
 }
 
 .disabled_button:hover {
   background-color: #185adb;
   cursor: pointer;
-  background-image: url('../../../assets/images/icons/add_white.svg');
+  background-image: url('../../../../assets/images/icons/add_white.svg');
   background-size: 34%;
 }
 
 .enabled_button:hover {
   background-color: #ffffff;
   cursor: pointer;
-  background-image: url('../../../assets/images/icons/cross_gray.svg');
+  background-image: url('../../../../assets/images/icons/cross_gray.svg');
   background-size: 30%;
 }
 
@@ -66,6 +66,6 @@
 .archive_button:hover {
   background-color: #185adb;
   cursor: pointer;
-  background-image: url('../../../assets/images/icons/play_white.svg');
+  background-image: url('../../../../assets/images/icons/play_white.svg');
   background-size: 25%;
 }

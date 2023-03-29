@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import Button from '../Button/Button';
+import Button from '../shared/Button/Button';
 import { ISheduleTableEvent } from '../../types';
 import getParseDate from '../../utils/getParseDate';
 import styles from './sheduleTableEvent.module.scss';
