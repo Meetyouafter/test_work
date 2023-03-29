@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, {
   useState, FormEvent, useEffect, FC,
 } from 'react';
@@ -11,18 +12,24 @@ import styles from './input.module.scss';
 const Input: FC<IInputProps> = ({
   name, mask, value, onChange, callBack, searchArray,
 }) => {
-  const [phonesForRender, setPhonesForRender] = useState(getModifyPhones(searchArray, mask));
-  const [inputClass, setInputClass] = useState('input_form');
+  const [phonesForRender, setPhonesForRender] = useState([]);
+  const [inputClass, setInputClass] = useState(styles.input_form);
+
+  useEffect(() => {
+    const phones = getModifyPhones(searchArray, mask);
+    const filteredPhones = phones.filter(el => el.startsWith(value));
+    setPhonesForRender(filteredPhones);
+  }, [value]);
 
   const getStatusStyle = (maskForm: string, number: string) => {
     if (!value) {
-      setInputClass('input_form');
+      setInputClass(styles.input_form);
     } else if (!checkPhone(number, maskForm)) {
-      setInputClass('input_form__incorrect');
+      setInputClass(styles.input_form__incorrect);
     } else if (phonesForRender.length === 0) {
-      setInputClass('input_form__unique');
+      setInputClass(styles.input_form__unique);
     } else {
-      setInputClass('input_form');
+      setInputClass(styles.input_form);
     }
   };
 
@@ -40,10 +47,7 @@ const Input: FC<IInputProps> = ({
     }
   };
 
-  useEffect(() => {
-    const filteredPhones = phonesForRender.filter(el => el.startsWith(value));
-    setPhonesForRender(filteredPhones);
-  }, [value]);
+
 
   useEffect(() => {
     getStatusStyle(mask, value);
@@ -53,7 +57,7 @@ const Input: FC<IInputProps> = ({
     <div className={styles.container}>
       <form onSubmit={onSubmit} className={styles.form}>
         <input
-          className={styles[inputClass]}
+          className={inputClass}
           value={value}
           onChange={e => onChange(e)}
           placeholder={mask}
