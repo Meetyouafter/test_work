@@ -1,14 +1,22 @@
 import React, {
-  useState, FormEvent, useEffect, FC,
+  useState, FormEvent, useEffect, FC, ChangeEvent,
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { IInputProps } from '../../../types';
 import getModifyPhones from '../../../utils/functions/getModifyPhones';
 import checkPhone from '../../../utils/functions/checkPhone';
 import removeNonAlphanumeric from '../../../utils/functions/removeNonAlphanumeric';
 import styles from './input.module.scss';
 
-const Input: FC<IInputProps> = ({
+interface InputProps {
+  name: string,
+  mask: string,
+  value: string,
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void,
+  callBack: (e: any) => void,
+  searchArray: string[],
+}
+
+const Input: FC<InputProps> = ({
   name, mask, value, onChange, callBack, searchArray,
 }) => {
   const [phonesForRender, setPhonesForRender] = useState([]);

@@ -1,9 +1,12 @@
 import React, {
-  useRef, useEffect, useState, FC,
+  useRef, useEffect, useState, FC, ReactNode,
 } from 'react';
 import arrowIcon from '../../../assets/images/icons/button_arrow.svg';
-import { ICarouselProps } from '../../../types';
 import styles from './carousel.module.scss';
+
+interface ICarouselProps {
+  children: ReactNode;
+}
 
 const Carousel: FC<ICarouselProps> = ({ children }) => {
   const scrollContainer = useRef<HTMLDivElement>(null);

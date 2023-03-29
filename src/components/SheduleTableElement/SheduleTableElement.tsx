@@ -1,10 +1,18 @@
 import React, { FC } from 'react';
-import SheduleTableEvent from '../SheduleTableEvent/SheduleTableEvent';
-import { ISheduleTableDataProps } from '../../types';
 import getParseDate from '../../utils/functions/getParseDate';
+import SheduleTableEvent, { IEvent } from '../SheduleTableEvent/SheduleTableEvent';
 import styles from './sheduleTableElement.module.scss';
 
-const SheduleTableElement: FC<ISheduleTableDataProps> = ({ isMeasure, date, events }) => {
+export interface SheduleTableDataProps {
+  date: string,
+  isMeasure: boolean,
+  events: IEvent[],
+}
+export interface SheduleTableElementProps {
+  data: SheduleTableDataProps[],
+}
+
+const SheduleTableElement: FC<SheduleTableDataProps> = ({ isMeasure, date, events }) => {
   const parsedDate = getParseDate.parseDate(date);
   const {
     dateForTable,

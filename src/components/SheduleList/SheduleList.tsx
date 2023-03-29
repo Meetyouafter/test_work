@@ -3,11 +3,21 @@ import Button from '../shared/Button/Button';
 import SpeakerList from '../SpeakerList/SpeakerList';
 import Program from '../Program/Program';
 import SheduleListNextDate from '../SheduleListNextDate/SheduleListNextDate';
-import { ISheduleListElementProps } from '../../types';
 import getParseDate from '../../utils/functions/getParseDate';
 import styles from './sheduleList.module.scss';
 
-const SheduleList: FC<ISheduleListElementProps> = ({ data }) => {
+interface SheduleListData {
+  date: string,
+  title: string,
+  description: string,
+  organization: string,
+  participants: string,
+}
+interface SheduleListElementProps {
+  data: SheduleListData,
+}
+
+const SheduleList: FC<SheduleListElementProps> = ({ data }) => {
   const [isSubscribe, setIsSubscribe] = useState(false);
   const {
     date, title, description, organization, participants,

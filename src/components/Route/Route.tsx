@@ -7,7 +7,7 @@ const RoutePage = () => {
 
   return (
     <div className={styles.container}>
-      <p>Press for move to the current test task</p>
+      <p>Нажмите на кнопку, соответствующую заданию</p>
       <div className={styles.buttons_container}>
         <button type="button" onClick={() => navigate('/input')}>Input</button>
         <button type="button" onClick={() => navigate('/shedule')}>Shedule</button>

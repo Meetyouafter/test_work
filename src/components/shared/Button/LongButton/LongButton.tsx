@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from './longButton.module.scss';
-import { IButtonComponent } from '../../../../types';
+import { IButton } from '../../../../types';
 
-const LongButton: React.FC<IButtonComponent> = ({
+const LongButton: React.FC<IButton> = ({
   variant, text, onClick, fullWidth,
 }) => {
   const [isEnabled, setIsEnabled] = useState(false);
