@@ -9,7 +9,7 @@ import InputPage from './InputPage/InputPage';
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<InputPage />} />
+      <Route path="/" element={<RoutePage />} />
       <Route path="/shedule" element={<Shedule />} />
       <Route path="/input" element={<InputPage />} />
     </Routes>
