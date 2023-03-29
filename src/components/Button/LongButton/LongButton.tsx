@@ -23,7 +23,7 @@ const LongButton: React.FC<IButtonComponent> = ({
 
   return (
     <button type="button" className={`${styles[`${checkedStyle()}_button`]} ${styles[widthStyle]}`} onClick={handleClick}>
-      <p className={styles.button_body}>{text}</p>
+      <p className={styles.button_body}>{isEnabled && variant === 'check' ? 'Добавлено' : text}</p>
       <div className={styles.button_section} />
     </button>
   );
