@@ -36,7 +36,7 @@ const SheduleList: FC<ISheduleListElementProps> = ({ data }) => {
             <p className={styles.zone}>мск</p>
           </div>
 
-          <div>
+          <div className={styles.links}>
             <a className={styles.shedule_body_title} href="/">
               {title}
             </a>
