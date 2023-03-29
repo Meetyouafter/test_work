@@ -12,7 +12,6 @@ const Shedule = () => {
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
-    console.log(windowWidth);
     return () => window.removeEventListener('resize', handleResize);
   }, [windowWidth]);
 
