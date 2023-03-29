@@ -1,14 +1,10 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, ReactNode } from 'react';
 
-export interface IInitialState {
-  phones: string[];
+export interface ICarouselProps {
+  children: ReactNode;
 }
 
-export interface IInputPage {
-  phones: string[],
-}
-
-export interface IInputForm {
+export interface IInputProps {
   name: string,
   mask: string,
   value: string,
@@ -17,7 +13,7 @@ export interface IInputForm {
   searchArray: string[],
 }
 
-export interface IButton {
+export interface IButtonProps {
   variant: 'check' | 'archive',
   type: 'long' | 'short',
   text: string,
@@ -38,7 +34,7 @@ export interface ISpeakerProps {
   work: string,
 }
 
-export interface ISheduleDate {
+export interface ISheduleDateProps {
   date: string,
   dayOfWeek: string,
 }
@@ -60,22 +56,27 @@ export interface ISheduleListData {
   participants: string,
 }
 
-export interface ISheduleListElement {
+export interface ISheduleListElementProps {
   data: ISheduleListData,
 }
 
-export interface ISheduleTableData {
+export interface ISheduleTableDataProps {
   date: string,
   isMeasure: boolean,
   events: IEvent[],
 }
-export interface ISheduleTableElement {
-  data: ISheduleTableData[],
+export interface ISheduleTableElementProps {
+  data: ISheduleTableDataProps[],
 }
 
-export interface ISheduleTableEvent {
+export interface ISheduleTableEventProps {
   event: IEvent,
 }
+
+
+
+
+
 
 export interface IDateParser {
   parseDate(data: string): {

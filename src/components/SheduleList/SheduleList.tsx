@@ -4,10 +4,10 @@ import styles from './sheduleList.module.scss';
 import SpeakerList from '../SpeakerList/SpeakerList';
 import Program from '../Program/Program';
 import SheduleListNextDate from '../SheduleListNextDate/SheduleListNextDate';
-import { ISheduleListElement } from '../../types';
+import { ISheduleListElementProps } from '../../types';
 import getParseDate from '../../utils/getParseDate';
 
-const SheduleList: FC<ISheduleListElement> = ({ data }) => {
+const SheduleList: FC<ISheduleListElementProps> = ({ data }) => {
   const [isSubscribe, setIsSubscribe] = useState(false);
   const {
     date, title, description, organization, participants,

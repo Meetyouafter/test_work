@@ -1,14 +1,11 @@
 import React, {
-  useRef, useEffect, useState, FC, ReactNode,
+  useRef, useEffect, useState, FC,
 } from 'react';
 import arrowIcon from '../../../assets/images/icons/button_arrow.svg';
+import { ICarouselProps } from '../../../types';
 import styles from './carousel.module.scss';
 
-interface CarouselProps {
-  children: ReactNode;
-}
-
-const Carousel: FC<CarouselProps> = ({ children }) => {
+const Carousel: FC<ICarouselProps> = ({ children }) => {
   const scrollContainer = useRef<HTMLDivElement>(null);
   const [isScrollLeftVisible, setIsScrollLeftVisible] = useState(false);
   const [isScrollRightVisible, setIsScrollRightVisible] = useState(true);

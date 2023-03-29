@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './input.module.scss';
-import { IInputProps } from '../../../types';
+import { IInputProps } from '../../types';
 
 const createPattern = (format: string) => {
   const regexString = format

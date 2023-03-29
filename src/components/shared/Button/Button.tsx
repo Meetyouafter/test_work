@@ -1,9 +1,9 @@
 import React from 'react';
 import LongButton from './LongButton/LongButton';
 import ShortButton from './ShortButton/ShortButton';
-import { IButton } from '../../../types';
+import { IButtonProps } from '../../../types';
 
-const Button: React.FC<IButton> = ({
+const Button: React.FC<IButtonProps> = ({
   variant, type, text, fullWidth, onClick,
 }) => (type === 'short' ? (
   <ShortButton variant={variant} text={text} onClick={onClick} />

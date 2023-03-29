@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
 import SheduleTableElement from '../SheduleTableElement/SheduleTableElement';
 import styles from './sheduleTable.module.scss';
-import { ISheduleTableElement } from '../../types';
+import { ISheduleTableElementProps } from '../../types';
 
-const SheduleTable: FC<ISheduleTableElement> = ({ data }) => {
+const SheduleTable: FC<ISheduleTableElementProps> = ({ data }) => {
   const [week, setWeek] = useState('first');
 
   const getActiveWeek = (order: string) => {
