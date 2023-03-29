@@ -1,11 +1,15 @@
 import React, { useState, FC, ChangeEvent } from 'react';
 import Input from '../shared/Input/Input';
+import phones from '../../utils/data/phones';
+import styles from './inputPage.module.scss';
 
 const InputPage: FC = () => {
+  const [phonesForCheck, setPhonesForCheck] = useState(phones);
   const [phone, setPhone] = useState<string>('');
 
   const callBack = (e: any) => {
-    console.log('Adding phone number');
+    setPhonesForCheck([...phonesForCheck, e]);
+    setPhone('');
   };
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -13,22 +17,15 @@ const InputPage: FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
+      <p className={styles.title}>Please, write phone here</p>
       <Input
         name="phone"
         mask="999-999-999"
         value={phone}
         onChange={onChange}
         callBack={callBack}
-        searchArray={[
-          '89025671544',
-          '89015648559',
-          '89456158789',
-          '89761954815',
-          '89027894156',
-          '89481526487',
-          '89564819448',
-        ]}
+        searchArray={phonesForCheck}
       />
     </div>
   );
