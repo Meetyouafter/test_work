@@ -1,8 +1,19 @@
 import React, { FC, useState } from 'react';
 import Button from '../shared/Button/Button';
-import { ISheduleTableEventProps } from '../../types';
 import getParseDate from '../../utils/functions/getParseDate';
 import styles from './sheduleTableEvent.module.scss';
+
+export interface IEvent {
+  time: string,
+  place: string,
+  description: string,
+  event: boolean,
+  live: boolean,
+  id: string,
+}
+interface ISheduleTableEventProps {
+  event: IEvent,
+}
 
 const SheduleTableEvent: FC<ISheduleTableEventProps> = ({ event }) => {
   const [isSubscribe, setIsSubscribe] = useState(false);

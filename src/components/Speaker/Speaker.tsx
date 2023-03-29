@@ -1,8 +1,13 @@
 import React from 'react';
-import { ISpeakerProps } from '../../types';
 import styles from './speaker.module.scss';
 
-const Speaker: React.FC<ISpeakerProps> = ({
+interface SpeakerProps {
+  image: string,
+  name: string,
+  work: string,
+}
+
+const Speaker: React.FC<SpeakerProps> = ({
   name, work, image,
 }) => (
   <div className={styles.speaker_container}>

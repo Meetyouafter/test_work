@@ -1,7 +1,11 @@
 import React from 'react';
 import LongButton from './LongButton/LongButton';
 import ShortButton from './ShortButton/ShortButton';
-import { IButtonProps } from '../../../types';
+import { IButton } from '../../../types';
+
+interface IButtonProps extends IButton {
+  type: 'long' | 'short',
+}
 
 const Button: React.FC<IButtonProps> = ({
   variant, type, text, fullWidth, onClick,

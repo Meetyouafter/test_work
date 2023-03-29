@@ -1,4 +1,10 @@
-import { IDateParser } from '../../types';
+interface IDateParser {
+  parseDate(data: string): {
+    dateForTable: string;
+    dateForList: string,
+    time: string;
+  }
+}
 
 const getParseDate: IDateParser = {
   parseDate: (data: string) => {
