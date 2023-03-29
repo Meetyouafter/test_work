@@ -131,6 +131,7 @@
   color: #E5E5E5;
   display: none;
   size: 1px;
+  margin-bottom: 10px;
 }
 
 .next_shedule_date {
@@ -162,6 +163,15 @@
     row-gap: 12px;
     padding: 32px 24px 34px 24px;
   }
+
+  .divider_mobile {
+    display: block;
+  }
+
+  .divider {
+    font-size: 14px;
+    text-align: left;
+  }
 }
 
 @media screen and (max-width: 319px) {
@@ -191,15 +201,6 @@
 
   .shedule_title {
     font-size: 18px;
-  }
-
-  .divider {
-    font-size: 14px;
-    text-align: left;
-  }
-
-  .divider_mobile {
-    display: block;
   }
 
   .container {
