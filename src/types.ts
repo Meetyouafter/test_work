@@ -36,7 +36,6 @@ export interface ISpeakerProps {
 
 export interface ISheduleDateProps {
   date: string,
-  dayOfWeek: string,
 }
 
 interface IEvent {
@@ -72,11 +71,6 @@ export interface ISheduleTableElementProps {
 export interface ISheduleTableEventProps {
   event: IEvent,
 }
-
-
-
-
-
 
 export interface IDateParser {
   parseDate(data: string): {

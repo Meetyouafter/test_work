@@ -1,6 +1,6 @@
 import React from 'react';
 import Speaker from '../Speaker/Speaker';
-import speakers from '../../utils/speakers';
+import speakers from '../../utils/data/speakers';
 import Carousel from '../shared/Carousel/Carousel';
 
 const SpeakerList = () => (

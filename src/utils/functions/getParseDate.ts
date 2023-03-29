@@ -1,4 +1,4 @@
-import { IDateParser } from '../types';
+import { IDateParser } from '../../types';
 
 const getParseDate: IDateParser = {
   parseDate: (data: string) => {

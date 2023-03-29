@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import SheduleTable from '../SheduleTable/SheduleTable';
 import SheduleList from '../SheduleList/SheduleList';
 import styles from './shedule.module.scss';
-import sheduleListData from '../../utils/sheduleListData';
-import sheduleTableData from '../../utils/sheduleTableData';
+import sheduleListData from '../../utils/data/sheduleListData';
+import sheduleTableData from '../../utils/data/sheduleTableData';
 
 const Shedule = () => {
   const [view, setView] = useState('list');

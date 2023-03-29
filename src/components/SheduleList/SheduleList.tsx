@@ -1,17 +1,18 @@
 import React, { FC, useState } from 'react';
 import Button from '../shared/Button/Button';
-import styles from './sheduleList.module.scss';
 import SpeakerList from '../SpeakerList/SpeakerList';
 import Program from '../Program/Program';
 import SheduleListNextDate from '../SheduleListNextDate/SheduleListNextDate';
 import { ISheduleListElementProps } from '../../types';
-import getParseDate from '../../utils/getParseDate';
+import getParseDate from '../../utils/functions/getParseDate';
+import styles from './sheduleList.module.scss';
 
 const SheduleList: FC<ISheduleListElementProps> = ({ data }) => {
   const [isSubscribe, setIsSubscribe] = useState(false);
   const {
     date, title, description, organization, participants,
   } = data;
+  const nextDate = '13 октября | Пятница';
 
   const parsedDate = getParseDate.parseDate(date);
   const {
@@ -64,7 +65,7 @@ const SheduleList: FC<ISheduleListElementProps> = ({ data }) => {
         </div>
       </div>
       <div className={styles.next_shedule_date}>
-        <SheduleListNextDate date="13 октября" dayOfWeek="Среда" />
+        <SheduleListNextDate date={nextDate} />
       </div>
     </div>
   );

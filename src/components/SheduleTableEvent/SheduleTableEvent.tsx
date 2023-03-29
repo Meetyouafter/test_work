@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import Button from '../shared/Button/Button';
 import { ISheduleTableEventProps } from '../../types';
-import getParseDate from '../../utils/getParseDate';
+import getParseDate from '../../utils/functions/getParseDate';
 import styles from './sheduleTableEvent.module.scss';
 
 const SheduleTableEvent: FC<ISheduleTableEventProps> = ({ event }) => {
