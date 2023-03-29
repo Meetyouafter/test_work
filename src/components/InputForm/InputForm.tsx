@@ -1,16 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, {
-  useState, ChangeEvent, FormEvent, useEffect, useRef,
+  useState, FormEvent, useEffect, FC,
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './inputForm.module.scss';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { addPhone } from '../../store/reducers/phones';
-
-interface IPhone {
-  number: string,
-  id: string,
-}
+import { IInputForm } from '../../types';
 
 const createPattern = (format: string) => {
   const regexString = format
@@ -32,60 +26,45 @@ const removeDash = (str: string) => {
   return str.replace(regex, '');
 };
 
-const InputForm = () => {
-  const [phone, setPhone] = useState('');
+const InputForm: FC<IInputForm> = ({
+  name, mask, value, onChange, callBack, searchArray,
+}) => {
   const [phonesForRender, setPhonesForRender] = useState([]);
   const [inputClass, setInputClass] = useState('input_form');
-  const phones = useAppSelector(state => state.phones.phones);
-  const dispatch = useAppDispatch();
 
-  const inputRef = useRef(null);
+  const pattern = createPattern(mask);
 
-  const maskForm = '999-99';
-  const pattern = createPattern(maskForm);
-
-  const checkPhone = (mask: string, number: string) => {
-    if (!isPatternCheck(number, mask)) {
+  const checkPhone = (maskForm: string, number: string) => {
+    if (!isPatternCheck(number, maskForm)) {
       setInputClass('input_form__incorrect');
     } else if (phonesForRender.length === 0) {
       setInputClass('input_form__unique');
     } else {
       setInputClass('input_form');
+      callBack(value);
     }
-  };
-
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
-    setPhone(newValue);
   };
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!phone.match(pattern)) {
+    if (!value.match(pattern)) {
       alert('Please, write correct phone');
-    } else if (phone) {
-      const number = removeDash(phone);
-      dispatch(addPhone({ number, id: uuidv4() }));
-      setPhone('');
+    } else if (value) {
+      const number = removeDash(value);
       alert('Your phone was added');
     } else {
       alert('Please, write your phone');
-      inputRef.current.focus();
     }
   };
 
   useEffect(() => {
-    inputRef.current.focus();
-  }, []);
-
-  useEffect(() => {
-    const filteredPhones = phones.filter(el => el.number.startsWith(phone));
+    const filteredPhones = searchArray.filter(el => el.startsWith(value));
     setPhonesForRender(filteredPhones);
-  }, [phone]);
+  }, [value]);
 
   useEffect(() => {
-    checkPhone(pattern, phone);
-  }, [maskForm, phone, phonesForRender]);
+    checkPhone(pattern, value);
+  }, [mask, value, phonesForRender]);
 
   return (
     <div className={styles.container}>
@@ -93,18 +72,18 @@ const InputForm = () => {
       <form onSubmit={onSubmit} className={styles.form}>
         <input
           className={styles[inputClass]}
-          value={phone}
-          ref={inputRef}
+          value={value}
           onChange={e => onChange(e)}
-          placeholder={maskForm}
+          placeholder={mask}
           type="tel"
+          name={name}
           pattern={pattern}
         />
         <button type="submit" className={styles.button}>Add phone</button>
       </form>
       <p>{pattern}</p>
       <div className={styles.phones_container}>
-        {phone && phonesForRender.map((el: IPhone) => (
+        {value && phonesForRender.map(el => (
           <p key={el.id} className={styles.phone}>{el.number}</p>
         ))}
       </div>

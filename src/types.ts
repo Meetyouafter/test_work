@@ -1,3 +1,22 @@
+import { ChangeEvent } from 'react';
+
+export interface IInitialState {
+  phones: string[];
+}
+
+export interface IInputPage {
+  phones: string[],
+}
+
+export interface IInputForm {
+  name: string,
+  mask: string,
+  value: string,
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void,
+  callBack: (e: any) => void,
+  searchArray: string[],
+}
+
 export interface IButton {
   variant: 'check' | 'archive',
   type: 'long' | 'short',
