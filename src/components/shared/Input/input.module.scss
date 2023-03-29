@@ -1,0 +1,49 @@
+@mixin input_form($shadow) {
+  border: 1px solid gray;
+  border-radius: 8px;
+  box-shadow: $shadow;
+  padding-left: 10px;
+}
+
+.container {
+  
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.input_form {
+  @include input_form(rgb(169 145 145) 0px 0px 10px 5px);
+}
+
+.input_form:focus {
+  @include input_form(rgb(29, 127, 145) 0px 0px 10px 5px);
+}
+
+.input_form__incorrect {
+  @include input_form(rgb(204, 24, 24) 0px 0px 10px 5px);
+}
+
+.input_form__unique {
+  @include input_form(rgb(145, 192, 17) 0px 0px 10px 5px);
+}
+
+.button {
+  color: #4044b9;
+  background-color: bisque;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.phones_container {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.phone {
+  border-bottom: 1px dotted gray;
+}
